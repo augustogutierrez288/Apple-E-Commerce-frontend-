@@ -1,0 +1,48 @@
+*{
+  font-family: 'Raleway', sans-serif !important;
+}
+:root {
+  --american-rose: #FF033E;
+  --gris-cemento: rgb(102, 102, 102);
+  --light: #fff;
+}
+.logo{
+  width: 35px;
+}
+.carrito{
+  width: 24px;
+}
+
+.nav-link {
+  font-weight: 500;
+  color: var(--gris-cemento) !important;
+  transition: .5s !important;
+}
+.nav-link:hover{
+  color: var(--american-rose) !important;
+  transform: scale(1.1) !important;
+}
+.dropdown-item {
+  color: var(--gris-cemento) !important ;
+  transition: .5s;
+}
+.dropdown-item:hover{
+  color: var(--american-rose) !important;
+}
+
+.container-carrito{
+  position: relative;
+}
+.cantidad{
+      text-align: center;
+      position: absolute;
+      bottom: -10px;
+      padding: 1px;
+      color: var(--light);
+      height: 20px;
+      width: 20px;
+      background: var(--american-rose);
+      border-radius: 50%;
+      font-size: 12px;
+      border-color:var(--light) ;
+}

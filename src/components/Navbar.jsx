@@ -1,34 +1,30 @@
-import CartWidget from './CartWidget';
+import { Link, NavLink } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+import {CartWidget1, CartWidget2} from './CartWidget';
 import logoApple from '../assets/apple-logo.png';
 
 function Menu() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <Navbar.Brand href="#home"><img className='logo' src={logoApple} alt="logo" /></Navbar.Brand>
+        <Link to="/"><img className="logo" src={logoApple} alt="logo" /></Link>
+        <CartWidget1 />
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Inicio</Nav.Link>
-            <Nav.Link href="#pricing">Servicio Tecnico</Nav.Link>
-            <NavDropdown title="Catalogo" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">iPhone</NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.2">
-                Tablet
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">MackBook</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action/3.4">
-                Accesorios
-              </NavDropdown.Item>
-            </NavDropdown>
+            <NavLink className="nav-link" to="/categoria">Inicio</NavLink>
+            <NavLink className="nav-link" to="/categoria/iPhone">iPhone</NavLink>
+            <NavLink className="nav-link" to="/categoria/iPad">iPad</NavLink>
+            <NavLink className="nav-link" to="/categoria/Macbook">Macbook</NavLink>
+            <NavLink className="nav-link" to="/categoria/MacStudio">Mac Studio</NavLink>
+            <NavLink className="nav-link" to="/categoria/MacDisplay">Mac Display</NavLink>
+            <NavLink className="nav-link" to="/categoria/Accesorios">Accesorios</NavLink>
+            <NavLink className="nav-link" to="/">Servicio Tecnico</NavLink>
           </Nav>
+          <CartWidget2 />
         </Navbar.Collapse>
-        <CartWidget />
       </Container>
     </Navbar>
   );

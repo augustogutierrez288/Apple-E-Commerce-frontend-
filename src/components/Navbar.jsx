@@ -10,7 +10,7 @@ function Menu() {
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
         <Link to="/"><img className="logo" src={logoApple} alt="logo" /></Link>
-        <CartWidget1 />
+        <Link to="/cart"><CartWidget1 /></Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
@@ -23,7 +23,7 @@ function Menu() {
             <NavLink className="nav-link" to="/categoria/Accesorios">Accesorios</NavLink>
             <NavLink className="nav-link" to="/">Servicio Tecnico</NavLink>
           </Nav>
-          <CartWidget2 />
+          <Link to="/cart"><CartWidget2 /></Link>
         </Navbar.Collapse>
       </Container>
     </Navbar>

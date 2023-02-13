@@ -1,10 +1,10 @@
 class Productos{
-    constructor(id,category,name,price,amount,img,rom,ram,colour,description){
+    constructor(id,category,name,price,stock,img,rom,ram,colour,description){
         this.id = id
         this.category = category
         this.name = name
         this.price = price
-        this.amount = amount
+        this.stock = stock
         this.img = img
         this.rom = rom
         this.ram = ram

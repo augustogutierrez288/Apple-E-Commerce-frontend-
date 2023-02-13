@@ -3,6 +3,7 @@
 }
 :root {
   --american-rose: #FF033E;
+  --Cincinnati-Red: #C6011F;
   --gris-cemento: rgb(102, 102, 102);
   --gris-light: rgb(168, 168, 168);
   --light: #fff;
@@ -18,7 +19,6 @@ a{
 .carrito{
   width: 24px;
 }
-
 .nav-link {
   font-weight: 500;
   color: var(--gris-cemento);
@@ -34,24 +34,10 @@ a{
 .dropdown-item:hover{
   color: var(--american-rose);
 }
-
 .container-carrito{
   position: absolute;
   top: 18px;
   right: 25%;
-}
-.cantidad{
-      text-align: center;
-      position: absolute;
-      bottom: -10px;
-      padding: 1px;
-      color: var(--light);
-      height: 17px;
-      width: 17px;
-      background: var(--american-rose);
-      border-radius: 50%;
-      font-size: 8px;
-      border-color:var(--light) ;
 }
 .navbar-nav{
   align-items: flex-end;
@@ -148,7 +134,7 @@ a{
   --bs-btn-disabled-bg: var(--american-rose);
   --bs-btn-disabled-border-color: var(--american-rose);
 }
-/*Components Cargador */
+/*Components ItemCharger */
 /**
   * Waterfall
   *
@@ -215,7 +201,7 @@ a{
             animation-delay: 1.25s;
     margin-left: -60px; }
 
-/*Components ItemDetailContainer */
+/*Components ItemDetail */
 .section-detail{
   position: relative;
   margin: 0;
@@ -301,30 +287,65 @@ a{
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  margin: 0 0 10px 0;
 }
 .amout-details p{
   font-size: 1rem;
   font-weight: 500;
   color: var(--gris-cemento);
+  margin: 0;
+}
+.shipping-detail{
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+  color: var(--gris-cemento);
+  margin: 0 0 0 0;
 }
 .container-buttons{
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  width: 160px;
+  width: 80%;
 }
-.ac{
-  width: 20px;
+.btn-compra{
+  width: 90%;
+  height: 40px;
+  background-color: var(--american-rose);
+  border: 1px solid var(--american-rose);
+  border-radius: 20px;
+  color: var(--light);
+  margin: 10px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn-compra:hover{
+  background-color: var(--Cincinnati-Red);
 }
 
 .img-detail{
   width: 50%;
   height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .img-detail img{
   width: 100%;
   height: 100%;
   object-fit: contain;
+}
+
+.item-count{
+  width: 200px;
+  height: 50px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 0 0 0 40px;
 }
 
 

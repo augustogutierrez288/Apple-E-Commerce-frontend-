@@ -1,8 +1,8 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { Cargador } from './Item';
 import ItemList from './ItemList';
+import { ItemCharger } from './Item';
 import { gFetch } from '../scripts/api';
 
 function ItemListContainer() {
@@ -23,12 +23,10 @@ function ItemListContainer() {
           .finally(() => setLoading(false))
     }
   }, [idCategoria])
-  
-  
 
   return (
     <main>
-      { loading ? < Cargador/> : <ItemList array = {productos} /> }
+      { loading ? < ItemCharger/> : <ItemList array = {productos} /> }
     </main>
   )
 }

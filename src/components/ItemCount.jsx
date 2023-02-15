@@ -1,7 +1,11 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
-function ItemCount({initial=1, stock= 10, onAdd}){
-    const [count, setCount] = useState(initial)
+function ItemCount({ initial= 1, stock= 10, onAdd}){
+
+    const [count, setCount ]= useState(initial)
+    const [btnCart, setBtnCart] = useState(true)
+    
     function sumarProduc(){
         if(count < stock){
             setCount(count + 1)
@@ -12,18 +16,18 @@ function ItemCount({initial=1, stock= 10, onAdd}){
             setCount(count - 1)
         }
     }
-    const onAddCard = ()=>{
-       onAdd(count)        
+    const onAddCart = ()=>{
+       onAdd(count)
+       setBtnCart(false)     
     }
 
     return(
         <div className="container-item-count">
            <div className='item-count'>
-                <button className='btn btn-info' onClick={sumarProduc()} >+</button><span>{count}</span><button className='btn btn-danger' onClick={restarProduc()} >-</button>
+                <button className='btn btn-info' onClick={sumarProduc} >+</button><span>{count}</span><button className='btn btn-danger' onClick={restarProduc} >-</button>
             </div>
             <div className='container-buttons'>
-                <button className='btn-compra' onClick={onAddCard()}>Añadir al Carrito</button>
-                <button className='btn-compra'>Comprar</button>
+                {btnCart ? <button className='btn-compra' onClick={onAddCart}>Añadir al Carrito</button> : <><Link to='/cart'><button className='btn-compra'>Ver Carrito</button></Link> <button className='btn-compra' onClick={onAddCart}>Añadir al Carrito</button></> }
             </div> 
         </div>
     )

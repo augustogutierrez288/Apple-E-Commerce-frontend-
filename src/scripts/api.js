@@ -8,7 +8,7 @@ class Productos{
         this.img = img
         this.rom = rom
         this.ram = ram
-        this.color = colour
+        this.colour = colour
         this.descrition = description
     };
 };

@@ -5,6 +5,7 @@ import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import CartContainer from './components/CartContainer';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import 'react-toastify/dist/ReactToastify.css';
 import './css/style.css';
 
 function App() {

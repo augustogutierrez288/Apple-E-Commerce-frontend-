@@ -5,7 +5,7 @@ import {Item} from './item'
 function ItemList({array}) {
   return (
     <>
-      {array.map(producto => <section className='container-card' key={producto.id}><Link to={`/producto/${producto.id}`}><Item product = {producto} /></Link></section>)}
+      {array.map(producto => <section className='container-card' key={producto.id}><Link className='a-p-l' to={`/producto/${producto.id}`}><Item product = {producto} /></Link></section>)}
     </>
   )
 }

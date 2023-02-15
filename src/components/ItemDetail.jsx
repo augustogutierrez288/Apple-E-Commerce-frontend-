@@ -2,6 +2,7 @@ import { useCartContext } from '../context/CartContext';
 import ItemCount from './ItemCount';
 
 function ItemDetail({element}) {
+ 
 
   const {addCart} = useCartContext()
 
@@ -10,8 +11,8 @@ function ItemDetail({element}) {
   }
 
   return (
-    <section className='row section-detail'>
-      <div className='col-12 block-colour'></div>
+    <main className='row section-detail'>
+      <section className='col-12 block-colour'></section>
       <article className='col-12 article-details'>
         <div className='img-details'><img src={element.img} alt={element.name} /></div>
         <div className='details'>
@@ -28,11 +29,11 @@ function ItemDetail({element}) {
             <div className='amout-details'>
               <p>Cantidad Disponible: <span>{element.stock}</span></p>
             </div>
-            <ItemCount stock={element.stock} onAdd={onAdd} />
+            <ItemCount stock={element.stock} onAdd={onAdd}/>
           </div>
         </div>
       </article>
-    </section>
+    </main>
   )
 }
 

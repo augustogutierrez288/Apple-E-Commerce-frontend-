@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from 'react-toastify';
 
 function notify(){
@@ -18,6 +18,8 @@ export const CartContextProvider = ({children}) => {
 
     const [cartList, setCartList] = useState([]);
     const [price, setPrice] = useState(0)
+    const [isProduct, setIsProduct] = useState(false)
+    const [totalAmount, setTotalAmount] = useState(0)
 
     function addCart(newProduct){
         const producInCart = cartList.find((product) => product.id === newProduct.id);
@@ -31,16 +33,71 @@ export const CartContextProvider = ({children}) => {
             setCartList([...cartList, newProduct]);
             notify();
         }
-        setPrice(price + newProduct.price * newProduct.amount)
+
+        setPrice(price + newProduct.price * newProduct.amount);
+        setTotalAmount(totalAmount + newProduct.amount)
     };
 
     function deleteCart(){
         setCartList([]);
         deleteNotify();
+        setIsProduct(false);
+        setPrice(0)
+        setTotalAmount(0)
     };
 
+    const addCartItem = (item) => {
+        const product = cartList.find((product) => product.id === item.id);
+        if (product) {
+          const newCart = cartList.map((product) =>
+            product.id === item.id
+              ? { ...product, amount: product.amount + 1 }
+              : product
+          );
+          setCartList(newCart);
+        } else {
+          setCartList([...cartList, { ...item, amount: 1 }]);
+        }
+        setPrice(price + item.price);
+        setTotalAmount(totalAmount + 1)
+      };
+
+    const deleteItem = (item) => {
+        const productElement = cartList.find((product) => product.id === item.id);
+        if (productElement) {
+            const newCart = cartList.map((product) =>{
+                if (product.id === productElement.id) {
+                    ({ ...productElement, amount: product.amount - 1}) 
+                    if(product.amount <= 1){
+                        btnDeleteItem(item)
+                    }
+                }else{
+                    productElement
+                }})
+            setCartList(newCart);
+        }else {
+            setCartList([...cartList, { ...item, amount: 1 }]);
+        }
+        setPrice(price - item.price);
+        setTotalAmount(totalAmount - 1)
+    };
+
+    function btnDeleteItem(item){
+        const result = cartList.filter(product => product.id !== item.id)
+        setCartList(result)
+        setTotalAmount(totalAmount - item.amount);
+        setPrice(price - item.price * item.amount);
+        if (cartList.length < 1) {
+            setIsProduct(false)
+            deleteNotify();
+        }else{
+            setIsProduct(true)
+        }
+    }
+
+
     return(
-        <CartContext.Provider value={{addCart, deleteCart, cartList, price}}>
+        <CartContext.Provider value={{addCart, deleteCart, cartList, price, isProduct, setIsProduct, totalAmount, deleteItem, addCartItem, btnDeleteItem}}>
             {children}
         </CartContext.Provider>
     )

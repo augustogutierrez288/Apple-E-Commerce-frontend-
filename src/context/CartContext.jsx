@@ -49,11 +49,7 @@ export const CartContextProvider = ({children}) => {
     const addCartItem = (item) => {
         const product = cartList.find((product) => product.id === item.id);
         if (product) {
-          const newCart = cartList.map((product) =>
-            product.id === item.id
-              ? { ...product, amount: product.amount + 1 }
-              : product
-          );
+          const newCart = cartList.map((product) => product.id === item.id ? { ...product, amount: product.amount + 1 } : product);
           setCartList(newCart);
         } else {
           setCartList([...cartList, { ...item, amount: 1 }]);
@@ -65,15 +61,7 @@ export const CartContextProvider = ({children}) => {
     const deleteItem = (item) => {
         const productElement = cartList.find((product) => product.id === item.id);
         if (productElement) {
-            const newCart = cartList.map((product) =>{
-                if (product.id === productElement.id) {
-                    ({ ...productElement, amount: product.amount - 1}) 
-                    if(product.amount <= 1){
-                        btnDeleteItem(item)
-                    }
-                }else{
-                    productElement
-                }})
+            const newCart = cartList.map((product) => product.id === productElement.id ? { ...product, amount: product.amount - 1} :product)
             setCartList(newCart);
         }else {
             setCartList([...cartList, { ...item, amount: 1 }]);
@@ -87,14 +75,7 @@ export const CartContextProvider = ({children}) => {
         setCartList(result)
         setTotalAmount(totalAmount - item.amount);
         setPrice(price - item.price * item.amount);
-        if (cartList.length < 1) {
-            setIsProduct(false)
-            deleteNotify();
-        }else{
-            setIsProduct(true)
-        }
     }
-
 
     return(
         <CartContext.Provider value={{addCart, deleteCart, cartList, price, isProduct, setIsProduct, totalAmount, deleteItem, addCartItem, btnDeleteItem}}>

@@ -4,6 +4,7 @@ import Menu from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
 import CartContainer from './components/CartContainer';
+import Footer from './components/Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'react-toastify/dist/ReactToastify.css';
 import './css/style.css';
@@ -20,6 +21,7 @@ function App() {
             <Route  path='/cart' element={ <CartContainer />  } /> 
             <Route path='*' element= { <Navigate to="/"/>}/>
           </Routes>
+          <Footer/>
         </CartContextProvider>
       </BrowserRouter>
   )

@@ -3,13 +3,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import {CartWidget1, CartWidget2} from './CartWidget';
-import logoApple from '../assets/apple-logo.png';
 
 function Menu() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <Link to="/"><img className="logo" src={logoApple} alt="logo" /></Link>
+        <Link to="/"><p className='galaxi'>Galaxi</p><p className='store'>Store</p></Link>
         <Link to="/cart"><CartWidget1 /></Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">

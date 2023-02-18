@@ -68,6 +68,9 @@ export const CartContextProvider = ({children}) => {
         }
         setPrice(price - item.price);
         setTotalAmount(totalAmount - 1)
+        if(item.amount <= 1){
+            btnDeleteItem(item)
+        }
     };
 
     function btnDeleteItem(item){
@@ -76,6 +79,14 @@ export const CartContextProvider = ({children}) => {
         setTotalAmount(totalAmount - item.amount);
         setPrice(price - item.price * item.amount);
     }
+
+    useEffect(()=>{
+        if(cartList.length < 1 && totalAmount < 1){
+            setIsProduct(false)
+        }else{
+            setIsProduct(true)
+        }
+    },[cartList])
 
     return(
         <CartContext.Provider value={{addCart, deleteCart, cartList, price, isProduct, setIsProduct, totalAmount, deleteItem, addCartItem, btnDeleteItem}}>

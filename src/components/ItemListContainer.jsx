@@ -25,8 +25,8 @@ function ItemListContainer() {
   }, [idCategoria])
 
   return (
-    <main>
-      { loading ? < ItemCharger/> : <ItemList array = {productos} /> }
+    <main className='container-fluid'>
+        { loading ? < ItemCharger/> : <ItemList array = {productos} /> }
     </main>
   )
 }

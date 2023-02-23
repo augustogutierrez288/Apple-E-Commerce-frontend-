@@ -1,33 +1,39 @@
 import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import ItemList from './ItemList';
-import { ItemCharger } from './Item';
-import { gFetch } from '../scripts/api';
+import ItemCharger from './ItemCharger';
 
 function ItemListContainer() {
-  const [productos, setProductos] = useState([])
+  const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
-  const {idCategoria} = useParams()
+  const {idCategory} = useParams()
 
-  useEffect(() =>{
-    if(idCategoria){
-      gFetch()
-      .then(response => setProductos(response.filter((producto) => producto.category === idCategoria)))
-      .catch(error => console.log(error))
-      .finally(() => setLoading(false))
-    }else{
-      gFetch()
-          .then(response => setProductos(response))
-          .catch(error => console.log(error))
-          .finally(() => setLoading(false))
+
+  useEffect(()=>{
+    setLoading(true)
+    const db = getFirestore() 
+    const queryCollections = collection(db, 'Productos')
+
+    if (idCategory) {
+        const queryFilter = query(queryCollections, where('category','==', idCategory))
+        getDocs(queryFilter)
+        .then((resp) => {setProducts( resp.docs.map(product => ({ id: product.id, ...product.data() } ) ))})
+        .catch((err) => console.error(err))
+        .finally(() => setLoading(false))
+    } else {
+        getDocs(queryCollections)
+        .then(resp => setProducts( resp.docs.map(product => ({ id: product.id, ...product.data() }) ) ))
+        .catch(err => console.error(err))
+        .finally(() => setLoading(false))      
     }
-  }, [idCategoria])
+  }, [idCategory])
 
   return (
-    <main className='container-fluid'>
-        { loading ? < ItemCharger/> : <ItemList array = {productos} /> }
-    </main>
+    <div className='container-fluid'>
+        { loading ? < ItemCharger/> : <ItemList array = {products} /> }
+    </div>
   )
 }
 

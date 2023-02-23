@@ -6,28 +6,41 @@ import Cart from './Cart';
 function CartContainer() {
     const {cartList, deleteCart, isProduct, totalAmount, price} = useCartContext()
 
+    function DetailProducts(){
+        return(
+            <>
+                <div className='detail-products'>
+                    <p>TOTAL:</p>
+                    <p>{totalAmount}</p>
+                    <p>${price}</p>   
+                </div>
+                <div className='cons-btn-buy'>
+                    <button onClick={deleteCart}>Vacias Carrito</button>
+                    <button>Finalizar Compra</button>
+                </div>
+            </>
+            
+        )
+    }
+    function ConsBtnBuyNone(){
+        return(
+            <Link to='/' className='v-a-i'><button>Volver a Inicio</button></Link>
+        )
+    }
 
     return (
-        <main className='container-cart'>
-            <section className='section-colour-cart'>
+        <div className='container-cart'>
+            <div className='section-colour-cart'>
             <ToastContainer position="top-right" autoClose={4000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light"/>
             <h4>Carrito de Compras</h4>
-                <section className='articles-cart-container'>
-                { cartList.map((cartProduct) => <article className='article-cart' key={cartProduct.id}><Cart productCart={cartProduct}/></article> )}
-                </section>
-                <div className='cons-detail-cart'>
-                    <div className='detail-products'>
-                        <p>TOTAL:</p>
-                        <p>{totalAmount}</p>
-                        <p>${price}</p>   
-                    </div>
-                    <div className='cons-btn-buy'>
-                        {isProduct ? <><button onClick={deleteCart}>Vacias Carrito</button><button>Finalizar Compra</button></> : <Link to='/' className='v-a-i'><button>Carrito Vacio - Volver a Inicio</button></Link> }
-                        
-                    </div>
+                <div className='articles-cart-container'>
+                {isProduct ? cartList.map((cartProduct) => <div className='article-cart'  key={cartProduct.id}><Cart productCart={cartProduct}/></div> ) : <h4>Carrito de Compras Vacio...</h4>}
                 </div>
-            </section>
-        </main>
+                <div className='cons-detail-cart'>
+                    {isProduct ? <DetailProducts/> : <ConsBtnBuyNone/>}
+                </div>
+            </div>
+        </div>
 
   )
 }

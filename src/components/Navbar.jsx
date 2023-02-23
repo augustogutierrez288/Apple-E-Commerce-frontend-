@@ -8,18 +8,15 @@ function Menu() {
   return (
     <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
-        <Link to="/"><p className='galaxi'>Galaxi</p><p className='store'>Store</p></Link>
+        <Link to="/" className='logo'><p className='galaxi'>Galaxi</p><p className='store'>Store</p></Link>
         <Link to="/cart"><CartWidget1 /></Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <NavLink className="nav-link" to="/categoria">Inicio</NavLink>
-            <NavLink className="nav-link" to="/categoria/iPhone">iPhone</NavLink>
-            <NavLink className="nav-link" to="/categoria/iPad">iPad</NavLink>
-            <NavLink className="nav-link" to="/categoria/Macbook">Macbook</NavLink>
-            <NavLink className="nav-link" to="/categoria/MacStudio">Mac Studio</NavLink>
-            <NavLink className="nav-link" to="/categoria/MacDisplay">Mac Display</NavLink>
-            <NavLink className="nav-link" to="/categoria/Accesorios">Accesorios</NavLink>
+            <NavLink className="nav-link" to="/">Inicio</NavLink>
+            <NavLink className="nav-link" to="/category/iPhone">iPhone</NavLink>
+            <NavLink className="nav-link" to="/category/iPad">iPad</NavLink>
+            <NavLink className="nav-link" to="/category/Macbook">Macbook</NavLink>
             <NavLink className="nav-link" to="/">Servicio Tecnico</NavLink>
           </Nav>
           <Link to="/cart"><CartWidget2 /></Link>

@@ -16,8 +16,8 @@ function App() {
           <Menu />
           <Routes>
             <Route path='/' element= {<ItemListContainer />}/>
-            <Route path='/categoria/:idCategoria' element= {<ItemListContainer />}/>  
-            <Route path='/producto/:idProducto' element= {<ItemDetailContainer/>}/>
+            <Route path='/category/:idCategory' element= {<ItemListContainer />}/>  
+            <Route path='/product/:idProducto' element= {<ItemDetailContainer/>}/>
             <Route  path='/cart' element={ <CartContainer />  } /> 
             <Route path='*' element= { <Navigate to="/"/>}/>
           </Routes>

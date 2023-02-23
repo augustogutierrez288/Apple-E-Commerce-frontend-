@@ -32,17 +32,22 @@ a{
 }
 
 /*Components Navbar */
+.logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .galaxi{
-  font-size: 1.1rem;
+  font-size: 1rem;
   font-weight: 800;
   color: var(--gris-cemento);
   margin: 0 5px 0 0;
 }
 .store{
   font-size: 1rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--american-rose);
-  margin: 0 10px 0 20px;
+  margin: 0 20px 0 0;
 }
 .carrito{
   width: 24px;
@@ -67,11 +72,24 @@ a{
   top: 18px;
   right: 25%;
 }
+.container-carrito p{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--light);
+  font-size: 11px;
+  font-weight: 500;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: var(--american-rose);
+  position: absolute;
+  right: -10px;
+}
 .navbar-nav{
   align-items: flex-end;
 }
 
-/*main */
 /*Components ItemList */
 .container-card{
   justify-content: center;
@@ -241,7 +259,7 @@ a{
 /*Components ItemDetail */
 .section-detail{
   width: 100%;
-  height: 105vh;
+  height: 118vh;
   position: relative;
   margin: 0;
   padding: 0 20px 0 20px;
@@ -292,23 +310,19 @@ a{
 }
 .memory{
   display: flex;
-  justify-content: center;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
   align-items: center;
   margin:0 0 10px 0;
 }
 .memory p{
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 500;
   color: var(--gris-cemento);
-  margin: 10px;
+  margin: 5px;
   padding: 5px;
-  cursor: pointer;
   border: 1px solid var(--gris-cemento);
   border-radius: 10px;
-}
-.memory p:hover{
-  color: #000;
-  border-color: #000;
 }
 .price-details{
   font-size: 2rem;
@@ -406,18 +420,17 @@ a{
 .section-colour-cart{
   width: 90%;
   height: 90%;
-  background-color: var(--american-rose);
-  border: 1.5px solid var(--Cincinnati-Red);
+  background-color: var(--light);
+  border: 1.5px solid var(--light);
   border-radius: 24px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
 }
 .section-colour-cart h4{
   text-align: center;
-  color: var(--light);
+  color: var(--american-rose);
   font-size: 1rem;
   font-weight: 700;
   margin: 3px;
@@ -434,6 +447,13 @@ a{
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+}
+.articles-cart-container h4{
+  font-size: 1.1rem;
+  font-weight: 600;
+  position: absolute;
+  top: 45%;
+  color: var(--gris-cemento);
 }
 .cons-detail-cart{
   width: 90%;
@@ -571,6 +591,10 @@ a{
 }
 
 /* Components Footer*/
+footer{
+  margin-top: 25px !important;
+}
+
 .bg-dark{
   background-color: var(--black) !important;
 }
@@ -635,19 +659,13 @@ a{
 }
 
 @media screen and (min-width: 992px) {
-  main{
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    align-items: center;
-  }
+ 
   .section-detail{
     width: 100%;
-    height: 112vh;
+    height: 121vh;
   }
   .card{
     width: 270px;
-    height: auto;
     margin: 25px;
     padding: 0;
   }
@@ -662,6 +680,7 @@ a{
   }
   .article-details{
     width: 80%;
+    height: auto;
   }
   .details{
     width: 50%;
@@ -702,9 +721,15 @@ a{
   .display{
     display: block;
   }
+  .footer-card div img {
+    width: 50px;
+  }
 }
   
   @media screen and (min-width: 768px) {
+      .details .description{
+        display: block;
+      }
       .item-count{
         width: 80%;
       }
@@ -723,12 +748,12 @@ a{
       .cons-price p{
         font-size: 1rem;
       }
+      .card{
+        height: 681px;
+      }
 }
   
 @media screen and (min-width: 576px) {
-  .details .description{
-    display: block;
-  }
   .block-colour{
     height: 22vh;
   }
@@ -749,5 +774,20 @@ a{
   }
   .cons-price p{
     font-size: 16px;
+  }
+  .memory{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin:0 0 10px 0;
+  }
+  .memory p{
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gris-cemento);
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid var(--gris-cemento);
+    border-radius: 10px;
   }
 }

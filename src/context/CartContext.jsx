@@ -48,14 +48,12 @@ export const CartContextProvider = ({children}) => {
 
     const addCartItem = (item) => {
         const product = cartList.find((product) => product.id === item.id);
-        if (product) {
-          const newCart = cartList.map((product) => product.id === item.id ? { ...product, amount: product.amount + 1 } : product);
-          setCartList(newCart);
-        } else {
-          setCartList([...cartList, { ...item, amount: 1 }]);
+        if (product && product.amount < product.stock) {
+            const newCart = cartList.map((product) => product.id === item.id ? { ...product, amount: product.amount + 1 } : product);
+            setCartList(newCart);
+            setPrice(price + item.price);
+            setTotalAmount(totalAmount + 1)
         }
-        setPrice(price + item.price);
-        setTotalAmount(totalAmount + 1)
       };
 
     const deleteItem = (item) => {

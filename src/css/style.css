@@ -91,6 +91,40 @@ a{
 }
 
 /*Components ItemList */
+.container-title{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+.container-title h2{
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gris-cemento);
+  margin: 40px 0 20px 0;
+}
+.container-btn-filtro{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+  margin: 10px 0 20px 0;
+}
+.btn-filtro{
+  text-align: center;
+  width: auto;
+  height: 30px;
+  padding: 15px;
+  margin: 5px;
+  background-color: #c5c4c4;
+  color: var(--gris-cemento);
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+}
 .container-card{
   justify-content: center;
   align-items: center;
@@ -411,14 +445,14 @@ a{
 
 /* Components CartContainer*/
 .container-cart{
-  width: 98vw;
+  width: 100%;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .section-colour-cart{
-  width: 90%;
+  width: 100%;
   height: 90%;
   background-color: var(--light);
   border: 1.5px solid var(--light);
@@ -437,7 +471,7 @@ a{
   justify-self: flex-start;
 }
 .articles-cart-container{
-  width: 90%;
+  width: 97%;
   height: 70%;
   background-color: var(--light);
   border: 1px solid var(--gris-light);
@@ -456,7 +490,7 @@ a{
   color: var(--gris-cemento);
 }
 .cons-detail-cart{
-  width: 90%;
+  width: 97%;
   height: 20%;
   background-color: var(--light);
   border: 1px solid var(--gris-light);
@@ -590,11 +624,140 @@ a{
   color: var(--light);
 }
 
+/* Components HeaderProduct*/
+.productHeader{
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gris-cemento);
+  margin: 30px 0 45px 0;
+  text-align: center;
+}
+.rows{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column-reverse;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.cols-1{
+  width: 90%;
+  height: 100%;
+  position: relative;
+  margin-left: 50px;
+}
+
+.cols-1 h2{
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.cols-1 h3{
+  font-size: 22px;
+  color: var(--gris-cemento);
+  font-weight: 500;
+  margin: 20px 0 10px;
+}
+
+.cols-1 p{
+  font-size: 15px;
+  color: var(--gris-light);
+  font-weight: 500;
+  margin: 20px 0;
+}
+
+.arrow{
+  width: 120px;
+  border: 0;
+  margin-top: 10px;
+  padding: 12px 10px;
+  outline: none;
+  color:#fff;
+  background: linear-gradient(to right, #fb5283, #ff3527);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: width .5s;
+}
+
+.arrow img{
+  width: 30px;
+  display: none;
+}
+
+.arrow:hover img{
+  transition: .5s;
+  display: block;
+}
+
+.arrow:hover{
+  width: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cols-1::after{
+  content: '';
+  width: 10px;
+  height: 57%;
+  background: linear-gradient(#ff469f, #ff6062);
+  position: absolute;
+  left: -40px;
+  top: 8px;
+}
+
+.cols-2{
+  width: 95%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 30px 0
+}
+
+.cols-2 .controller{
+  width: 250px;
+  position: relative;
+  right: 20px;
+}
+
+.color-box{
+  position: absolute;
+  right: 0;
+  top: 0;
+  background: linear-gradient(#ff54a2, #ff575a);
+  border-radius: 20px 0 0 20px;
+  height: 90%;
+  width: 80%;
+  z-index: -1;
+}
+
+.add-btn{
+  position: absolute;
+  right: 5px;
+  width: 70px;
+  height: 90px;
+  text-align: center;
+  color: #fff;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.add-btn img{
+  width: 35px;
+  margin-bottom: 5px;
+}
+.add-btn p{
+  font-size: 15px;
+  font-weight: 500;
+}
 /* Components Footer*/
 footer{
   margin-top: 25px !important;
 }
-
 .bg-dark{
   background-color: var(--black) !important;
 }
@@ -657,9 +820,83 @@ footer{
   font-weight: 600;
   margin: 15px 0 10px 0;
 }
+/* Components FormCart*/
+.container-form{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+.container-form h2{
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gris-cemento);
+  margin: 30px 0 20px 0;
+  text-align: center;
+ 
+}
+.container-form p{
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gris-cemento);
+  margin: 10px 0 30px 0;
+  text-align: center;
+}
+.father-form{
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border: 2px solid var(--gris-light);
+  border-radius: 25px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+.father-form h3{
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--gris-cemento);
+  margin: 20px 0 20px 0;
+}
+
+.father-form form{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.row-input{
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5px 0 5px 0;
+}
+.row-input p{
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gris-cemento);
+  margin: 0 0 5px 0;
+}
+.row-input input{
+  width: 90%;
+  background-color: var(--gris-light);
+  color: var(--gris-cemento);
+  border-radius: 20px;
+  border-color: var(--light);
+}
 
 @media screen and (min-width: 992px) {
- 
+  .container-form{
+    height: 110vh;
+  }
   .section-detail{
     width: 100%;
     height: 121vh;
@@ -724,33 +961,118 @@ footer{
   .footer-card div img {
     width: 50px;
   }
+  .productHeader {
+    font-size: 3rem;
+  }
+  .rows{
+    height: auto;
+    flex-flow: row;
+    justify-content: center;
+  }
+  .cols-1{
+    width: 40%;
+  }
+  
+  .cols-1 h2{
+    font-size: 54px;
+    font-weight: 700;
+  }
+  
+  .cols-1 h3{
+    font-size: 32px;
+    margin: 25px 0 15px;
+  }
+  
+  .cols-1 p{
+    font-size: 20px;
+    margin: 25px 0;
+  }
+  .cols-2{
+    width: 60%;
+  }
+  .cols-2 .controller{
+    width: 58% !important;
+  }
+  .add-btn{
+    right: 20px;
+    width: 100px !important;
+    height: 120px !important;
+  }
+  
+  .add-btn img{
+    width: 40px !important;
+  }
+  .add-btn p{
+    font-size: 1.1px;
+  }
+  .container-title h2{
+    font-size: 3rem;
+  }
+  .btn-filtro{
+    text-align: center;
+    width: auto;
+    height: 30px;
+    padding: 20px;
+    margin: 10px;
+    background-color: #c5c4c4;
+    color: var(--gris-cemento);
+    font-size: 1.2rem;
+    font-weight: 500;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+  }
+  
 }
   
-  @media screen and (min-width: 768px) {
-      .details .description{
-        display: block;
-      }
-      .item-count{
-        width: 80%;
-      }
-      .article-cart{
-        height: 75px;
-      }
-      .cons-img{
-        width: 75px;
-      }
-      .cons-name p{
-        font-size: 1rem;
-      }
-      .cons-amount p{
-        font-size: 1rem;
-      }
-      .cons-price p{
-        font-size: 1rem;
-      }
-      .card{
-        height: 681px;
-      }
+@media screen and (min-width: 768px) {
+  .details .description{
+    display: block;
+  }
+  .item-count{
+    width: 80%;
+  }
+  .article-cart{
+    height: 75px;
+  }
+  .cons-img{
+    width: 75px;
+  }
+  .cons-name p{
+    font-size: 1rem;
+  }
+  .cons-amount p{
+    font-size: 1rem;
+  }
+  .cons-price p{
+    font-size: 1rem;
+  }
+  .card{
+    height: 681px;
+  }
+
+  .cols-2 .controller{
+    width: 400px;
+  }
+
+  .add-btn{
+    position: absolute;
+    right: 40px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .cols-1 h2{
+    font-size: 45px;
+  }
+
+  .cols-2 h3{
+    font-size: 25px;
+  }
+  .cols-2 p{
+    font-size: 1rem;
+  }
 }
   
 @media screen and (min-width: 576px) {
@@ -789,5 +1111,25 @@ footer{
     padding: 5px;
     border: 1px solid var(--gris-cemento);
     border-radius: 10px;
+  }
+
+  .cols-2 .controller{
+    width: 310px;
+  }
+
+  .add-btn{
+    right: 35px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .add-btn img{
+    width: 35px;
+  }
+  .add-btn p{
+    font-size: 1rem;
+  }
+  .father-form{
+    width: 420px;
   }
 }

@@ -16,7 +16,7 @@ function CartContainer() {
                 </div>
                 <div className='cons-btn-buy'>
                     <button onClick={deleteCart}>Vacias Carrito</button>
-                    <button>Finalizar Compra</button>
+                    <Link to='/form-cart'><button>Finalizar Compra</button></Link>
                 </div>
             </>
             

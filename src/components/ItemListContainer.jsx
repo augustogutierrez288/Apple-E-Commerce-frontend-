@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import ItemList from './ItemList';
 import ItemCharger from './ItemCharger';
+import ProductHeader from './ProductHeader';
 
 function ItemListContainer() {
   const [products, setProducts] = useState([])
@@ -32,7 +33,7 @@ function ItemListContainer() {
 
   return (
     <div className='container-fluid'>
-        { loading ? < ItemCharger/> : <ItemList array = {products} /> }
+        { loading ? < ItemCharger/> : <><ProductHeader/><ItemList array = {products} /></>  }
     </div>
   )
 }

@@ -14,7 +14,7 @@ function ItemDetailContainer() {
     getDoc(query)
     .then(resp => setProducto( { id: resp.id, ...resp.data() } ))
     .catch((err) => console.log(err))
-  }, [producto])
+  },[idProducto])
 
   return (
     <>

@@ -78,6 +78,23 @@ export const CartContextProvider = ({children}) => {
         setPrice(price - item.price * item.amount);
     }
 
+    function addCartHeader(newProduct){
+        const producInCart = cartList.find((product) => product.id === newProduct.id);
+        if (producInCart) {
+            const newCart = cartList.map( (produc) =>
+                produc.id === newProduct.id ? { ...produc, amount: produc.amount + 1 }: produc
+            );
+            setCartList(newCart);
+            notify();
+        } else {
+            setCartList([...cartList, newProduct]);
+            notify();
+        }
+
+        setPrice(price + newProduct.price * newProduct.amount);
+        setTotalAmount(totalAmount + newProduct.amount)
+    };
+
     useEffect(()=>{
         if(cartList.length < 1 && totalAmount < 1){
             setIsProduct(false)
@@ -87,7 +104,7 @@ export const CartContextProvider = ({children}) => {
     },[cartList])
 
     return(
-        <CartContext.Provider value={{addCart, deleteCart, cartList, price, isProduct, setIsProduct, totalAmount, deleteItem, addCartItem, btnDeleteItem}}>
+        <CartContext.Provider value={{addCart, addCartHeader, deleteCart, cartList, price, isProduct, setIsProduct, totalAmount, deleteItem, addCartItem, btnDeleteItem}}>
             {children}
         </CartContext.Provider>
     )

@@ -444,6 +444,13 @@ a{
 }
 
 /* Components CartContainer*/
+.l-b-c{
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .container-cart{
   width: 100%;
   height: 100vh;
@@ -462,10 +469,10 @@ a{
   justify-content: center;
   align-items: center;
 }
-.section-colour-cart h4{
+.section-colour-cart h2{
   text-align: center;
-  color: var(--american-rose);
-  font-size: 1rem;
+  color: var(--gris-cemento);
+  font-size: 2rem;
   font-weight: 700;
   margin: 3px;
   justify-self: flex-start;
@@ -892,8 +899,187 @@ footer{
   border-radius: 20px;
   border-color: var(--light);
 }
+.id-order{
+  width: 90%;
+  height: auto;
+}
+.id-order p{
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gris-cemento);
+}
+.id-order svg{
+  color: var(--american-rose);
+}
+
+.section-error{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+.section-error img{
+  width: 80%;
+}
+.section-error p{
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: var(--gris-cemento);
+}
+
+/*Components detailsIndex */
+.about-index{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+}
+.about-index h2{
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: var(--american-rose);
+  margin: 30px 0 20px 0;
+}
+.container-about-index{
+  width: 90%;
+  height: auto;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+  align-items: center;
+}
+.box{
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 230px;
+  height: 230px;
+  text-align: center;
+  margin: 15px;
+  padding: 10px;
+}
+.box img{
+  width: 65px;
+}
+.box h3{
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gris-cemento);
+}
+.box p{
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--gris-cemento);
+}
+.line-v{
+  display: none;
+  width: 2px;
+  height: 100px;
+  background-color: var(--gris-cemento);
+}
+.container-pay{
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container-pay h2{
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 30px 0 20px 0;
+  color: var(--gris-cemento);
+  text-align: center;
+}
+.container-pay p{
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 10px 0 30px 0;
+  color: var(--gris-cemento);
+  text-align: center;
+}
+.container-box-2{
+  width: 90%;
+  height: auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  margin: 10px 0 20px 0;
+}
+.box2{
+  width: 150px;
+  height: 200px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 10px;
+}
+.box2 img{
+  width: 60px;
+}
+.box2 p{
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--gris-cemento);
+  text-align: center;
+}
 
 @media screen and (min-width: 992px) {
+  .box2 p{
+    font-size: 1rem !important;
+  }
+  .container-pay h2{
+    font-size: 3rem;
+  }
+  .container-pay p{
+    font-size: 1.5rem;
+    width: 70%;
+  }
+  .container-about-index{
+    width: 990px;
+    height: 640px;
+  }
+  .about-index h2{
+    font-size: 3rem !important;
+  }
+  .line-v{
+    display: block !important;
+  }
+  .box{
+    width: 290px !important;
+    height: 290px !important;
+    margin: 15px !important;
+    padding: 12px !important;
+  }
+  .box img{
+    width: 72px !important;
+  }
+  .box h3{
+    font-size: 1.2rem !important;
+  }
+  .box p{
+    font-size: 1rem !important;
+  }
+  .section-error img{
+    width: 500px;
+  }
+  .section-colour-cart h2{
+    font-size: 3rem;
+  }
   .container-form{
     height: 110vh;
   }
@@ -1022,6 +1208,13 @@ footer{
     display: flex;
     align-items: center;
   }
+  .container-form h2{
+    font-size: 3rem;
+   
+  }
+  .container-form p{
+    font-size: 1.5rem;
+  }
   
 }
   
@@ -1076,6 +1269,18 @@ footer{
 }
   
 @media screen and (min-width: 576px) {
+  .box2{
+    width: 200px;
+    height: 210px;
+  }
+  .box{
+    width: 200px;
+    height: 215px;
+    margin: 10px;
+  }
+  .box img{
+    width: 60px;
+  }
   .block-colour{
     height: 22vh;
   }

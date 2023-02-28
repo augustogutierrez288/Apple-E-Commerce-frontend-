@@ -15,8 +15,8 @@ function CartContainer() {
                     <p>${price}</p>   
                 </div>
                 <div className='cons-btn-buy'>
-                    <button onClick={deleteCart}>Vacias Carrito</button>
-                    <Link to='/form-cart'><button>Finalizar Compra</button></Link>
+                    <button onClick={deleteCart}>Vaciar Carrito</button>
+                    <Link className='l-b-c' to='/form-cart'><button>Finalizar Compra</button></Link>
                 </div>
             </>
             
@@ -32,7 +32,7 @@ function CartContainer() {
         <div className='container-cart'>
             <div className='section-colour-cart'>
             <ToastContainer position="top-right" autoClose={4000} hideProgressBar={false} newestOnTop={false} closeOnClick rtl={false} pauseOnFocusLoss draggable pauseOnHover theme="light"/>
-            <h4>Carrito de Compras</h4>
+            <h2>Carrito de Compras</h2>
                 <div className='articles-cart-container'>
                 {isProduct ? cartList.map((cartProduct) => <div className='article-cart'  key={cartProduct.id}><Cart productCart={cartProduct}/></div> ) : <h4>Carrito de Compras Vacio...</h4>}
                 </div>

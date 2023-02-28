@@ -17,7 +17,9 @@ function Menu() {
             <NavLink className="nav-link" to="/category/iPhone">iPhone</NavLink>
             <NavLink className="nav-link" to="/category/iPad">iPad</NavLink>
             <NavLink className="nav-link" to="/category/Macbook">Macbook</NavLink>
-            <NavLink className="nav-link" to="/">Servicio Tecnico</NavLink>
+            <NavLink className="nav-link" to="/404">Sobre Nosotros</NavLink>
+            <NavLink className="nav-link" to="/404">Servicio Tecnico</NavLink>
+            <NavLink className="nav-link" to="/404">Contactos</NavLink>
           </Nav>
           <Link to="/cart"><CartWidget2 /></Link>
         </Navbar.Collapse>

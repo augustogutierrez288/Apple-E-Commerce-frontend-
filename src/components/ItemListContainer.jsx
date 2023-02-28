@@ -5,8 +5,10 @@ import { collection, getDocs, getFirestore, query, where } from 'firebase/firest
 import ItemList from './ItemList';
 import ItemCharger from './ItemCharger';
 import ProductHeader from './ProductHeader';
+import DetailsIndex from './DetailsIndex';
 
 function ItemListContainer() {
+
   const [products, setProducts] = useState([])
   const [loading, setLoading] = useState(true)
   const {idCategory} = useParams()
@@ -31,9 +33,12 @@ function ItemListContainer() {
     }
   }, [idCategory])
 
+
   return (
     <div className='container-fluid'>
-        { loading ? < ItemCharger/> : <><ProductHeader/><ItemList array = {products} /></>  }
+
+        { loading ? < ItemCharger/> : <><ProductHeader/><ItemList array = {products} /><DetailsIndex/></> }
+
     </div>
   )
 }

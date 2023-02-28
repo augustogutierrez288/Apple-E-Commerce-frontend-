@@ -18,10 +18,7 @@ Este proyecto seguirá en desarrollo mientras vaya aprendiendo nuevas tecnologí
 1. HTML5
 2. CSS3
 3. JavaScript
-4. React 
-5. JSX
-6. Vite
-7. Firebase 
+4. JSX 
 
 ### Dependencias
 1. Bootstrap : 5.2.3

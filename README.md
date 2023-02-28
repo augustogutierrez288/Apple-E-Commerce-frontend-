@@ -1,6 +1,6 @@
 # Galaxi Store React Vite JSX E-commerce (Frontend)
 
-![Portada](./AppleE-Commerce/public/GalaxiStore-Portada.png)
+![Portada](./public/GalaxiStore-Portada.png)
 
 ## Introduccion
 

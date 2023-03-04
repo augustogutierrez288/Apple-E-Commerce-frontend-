@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 import { collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import ItemHeader from './ItemHeader';
 
-function ProductHeader() {
+function ItemHeaderContainer() {
     const [productsHeader, setProductsHeader] = useState([])
     const [OneProduct, setOneProduct ] =  useState({})
     const [statud, setStatud] = useState(true)
@@ -40,4 +40,4 @@ function ProductHeader() {
   )
 }
 
-export default ProductHeader
+export default ItemHeaderContainer

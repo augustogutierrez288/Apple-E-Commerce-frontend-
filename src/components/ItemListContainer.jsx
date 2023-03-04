@@ -4,8 +4,8 @@ import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
 import ItemList from './ItemList';
 import ItemCharger from './ItemCharger';
-import ProductHeader from './ProductHeader';
 import DetailsIndex from './DetailsIndex';
+import ItemHeaderContainer from './ItemHeaderContainer';
 
 function ItemListContainer() {
 
@@ -18,26 +18,18 @@ function ItemListContainer() {
     setLoading(true)
     const db = getFirestore() 
     const queryCollections = collection(db, 'Productos')
-
-    if (idCategory) {
-        const queryFilter = query(queryCollections, where('category','==', idCategory))
-        getDocs(queryFilter)
-        .then((resp) => {setProducts( resp.docs.map(product => ({ id: product.id, ...product.data() } ) ))})
-        .catch((err) => console.error(err))
-        .finally(() => setLoading(false))
-    } else {
-        getDocs(queryCollections)
-        .then(resp => setProducts( resp.docs.map(product => ({ id: product.id, ...product.data() }) ) ))
-        .catch(err => console.error(err))
-        .finally(() => setLoading(false))      
-    }
+    const queryFilter = idCategory ? query(queryCollections, where('category','==', idCategory)) : queryCollections
+    getDocs(queryFilter)
+    .then((resp) => {setProducts( resp.docs.map(product => ({ id: product.id, ...product.data() } ) ))})
+    .catch((err) => console.error(err))
+    .finally(() => setLoading(false))
   }, [idCategory])
 
 
   return (
     <div className='container-fluid'>
 
-        { loading ? < ItemCharger/> : <><ProductHeader/><ItemList array = {products} /><DetailsIndex/></> }
+        { loading ? < ItemCharger/> : <><ItemHeaderContainer/><ItemList array = {products} /><DetailsIndex/></> }
 
     </div>
   )

@@ -830,7 +830,6 @@ footer{
 /* Components FormCart*/
 .container-form{
   width: 100%;
-  height: 100vh;
   display: flex;
   flex-flow: column nowrap;
   justify-content: flex-start;
@@ -854,6 +853,7 @@ footer{
 .father-form{
   width: 90%;
   height: auto;
+  margin-bottom: 30px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -902,6 +902,7 @@ footer{
 .id-order{
   width: 90%;
   height: auto;
+  margin: 20px 0 40px 0;
 }
 .id-order p{
   font-size: 1rem;
@@ -910,6 +911,8 @@ footer{
 }
 .id-order svg{
   color: var(--american-rose);
+  width: 60px;
+  height: 60px;
 }
 
 .section-error{
@@ -1039,6 +1042,9 @@ footer{
 }
 
 @media screen and (min-width: 992px) {
+  footer{
+    margin-top: 50px;
+  }
   .box2 p{
     font-size: 1rem !important;
   }
@@ -1080,9 +1086,6 @@ footer{
   .section-colour-cart h2{
     font-size: 3rem;
   }
-  .container-form{
-    height: 110vh;
-  }
   .section-detail{
     width: 100%;
     height: 121vh;
@@ -1103,7 +1106,7 @@ footer{
   }
   .article-details{
     width: 80%;
-    height: auto;
+    height: 90%;
   }
   .details{
     width: 50%;
@@ -1139,6 +1142,7 @@ footer{
     width: 15%;
   }
   .cons-detail-cart {
+    height: 25%;
     justify-content: space-evenly;
   }
   .display{
@@ -1214,6 +1218,12 @@ footer{
   }
   .container-form p{
     font-size: 1.5rem;
+  }
+  .container-cart{
+    height: 105vh;
+  }
+  .section-colour-cart{
+    height: 95%;
   }
   
 }

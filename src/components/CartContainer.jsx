@@ -1,32 +1,11 @@
 import { ToastContainer } from 'react-toastify';
-import { Link } from "react-router-dom"
 import { useCartContext } from '../context/CartContext';
+import { ConsBtnBuyNone, DetailProducts } from './IsProductInCart';
 import Cart from './Cart';
 
 function CartContainer() {
     const {cartList, deleteCart, isProduct, totalAmount, price} = useCartContext()
 
-    function DetailProducts(){
-        return(
-            <>
-                <div className='detail-products'>
-                    <p>TOTAL:</p>
-                    <p>{totalAmount}</p>
-                    <p>${price}</p>   
-                </div>
-                <div className='cons-btn-buy'>
-                    <button onClick={deleteCart}>Vaciar Carrito</button>
-                    <Link className='l-b-c' to='/form-cart'><button>Finalizar Compra</button></Link>
-                </div>
-            </>
-            
-        )
-    }
-    function ConsBtnBuyNone(){
-        return(
-            <Link to='/' className='v-a-i'><button>Volver a Inicio</button></Link>
-        )
-    }
 
     return (
         <div className='container-cart'>
@@ -37,7 +16,7 @@ function CartContainer() {
                 {isProduct ? cartList.map((cartProduct) => <div className='article-cart'  key={cartProduct.id}><Cart productCart={cartProduct}/></div> ) : <h4>Carrito de Compras Vacio...</h4>}
                 </div>
                 <div className='cons-detail-cart'>
-                    {isProduct ? <DetailProducts/> : <ConsBtnBuyNone/>}
+                    {isProduct ? <DetailProducts totalAmount={totalAmount} price={price} deleteCart={deleteCart}/> : <ConsBtnBuyNone/>}
                 </div>
             </div>
         </div>

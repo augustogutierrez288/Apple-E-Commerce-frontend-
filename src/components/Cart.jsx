@@ -10,9 +10,9 @@ function Cart({productCart}) {
             <div className='cons-img'><img src={productCart.img} alt={productCart.name} /></div>
             <div className='cons-name'><p>{productCart.name}</p></div>
             <div className='cons-amount'>
-                <button className='cons-btn2 display' onClick={()=>{addCartItem(productCart)}}>+</button>
-                <p>{productCart.amount}</p>
                 <button className='cons-btn display' onClick={()=>{deleteItem(productCart)}}>-</button>
+                <p>{productCart.amount}</p>
+                <button className='cons-btn2 display' onClick={()=>{addCartItem(productCart)}}>+</button>
             </div>
             <div className='cons-price'><p>${productCart.price * productCart.amount}</p></div>
             <button className='cons-btn' onClick={()=>{btnDeleteItem(productCart)}}>

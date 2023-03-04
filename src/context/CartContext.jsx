@@ -20,6 +20,8 @@ export const CartContextProvider = ({children}) => {
     const [price, setPrice] = useState(0)
     const [isProduct, setIsProduct] = useState(false)
     const [totalAmount, setTotalAmount] = useState(0)
+    const [idOrder, setIdOrder] = useState("")
+    const [onForm, setOnForm] = useState(true)
 
     function addCart(newProduct){
         const producInCart = cartList.find((product) => product.id === newProduct.id);
@@ -90,7 +92,7 @@ export const CartContextProvider = ({children}) => {
             setCartList([...cartList, newProduct]);
             notify();
         }
-
+        setOnForm(true)
         setPrice(price + newProduct.price * newProduct.amount);
         setTotalAmount(totalAmount + newProduct.amount)
     };
@@ -104,7 +106,7 @@ export const CartContextProvider = ({children}) => {
     },[cartList])
 
     return(
-        <CartContext.Provider value={{addCart, addCartHeader, deleteCart, cartList, price, isProduct, setIsProduct, totalAmount, deleteItem, addCartItem, btnDeleteItem}}>
+        <CartContext.Provider value={{setPrice, setTotalAmount, addCart, addCartHeader, deleteCart, cartList, price, isProduct, setIsProduct, totalAmount, deleteItem, addCartItem, btnDeleteItem, idOrder, setIdOrder, onForm, setOnForm, setCartList }}>
             {children}
         </CartContext.Provider>
     )

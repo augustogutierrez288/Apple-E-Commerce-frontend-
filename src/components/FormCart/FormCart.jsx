@@ -1,4 +1,4 @@
-import { useCartContext } from '../context/CartContext';
+import { useCartContext } from '../../context/CartContext';
 import { ToastContainer } from 'react-toastify';
 import FormBuy from './FormBuy';
 import IDBuy from './IDBuy';

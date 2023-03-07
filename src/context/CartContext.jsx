@@ -23,6 +23,7 @@ export const CartContextProvider = ({children}) => {
     const [idOrder, setIdOrder] = useState("")
     const [onForm, setOnForm] = useState(true)
 
+    //añade un elemento al carrito desde ItemDetail
     function addCart(newProduct){
         const producInCart = cartList.find((product) => product.id === newProduct.id);
         if (producInCart) {
@@ -40,6 +41,7 @@ export const CartContextProvider = ({children}) => {
         setTotalAmount(totalAmount + newProduct.amount)
     };
 
+    // Vacia el Carrito desde CartContainer
     function deleteCart(){
         setCartList([]);
         deleteNotify();
@@ -47,7 +49,7 @@ export const CartContextProvider = ({children}) => {
         setPrice(0)
         setTotalAmount(0)
     };
-
+    // Aumenta 1 cantidad mas del elemento ya cargado
     const addCartItem = (item) => {
         const product = cartList.find((product) => product.id === item.id);
         if (product && product.amount < product.stock) {
@@ -56,8 +58,8 @@ export const CartContextProvider = ({children}) => {
             setPrice(price + item.price);
             setTotalAmount(totalAmount + 1)
         }
-      };
-
+    };
+    // Elimina 1 cantidad mas del elemento ya cargado, si es menor a 1 lo elimina del array
     const deleteItem = (item) => {
         const productElement = cartList.find((product) => product.id === item.id);
         if (productElement) {
@@ -72,14 +74,14 @@ export const CartContextProvider = ({children}) => {
             btnDeleteItem(item)
         }
     };
-
+    //Funcion para eliminar un elemento del carrito
     function btnDeleteItem(item){
         const result = cartList.filter(product => product.id !== item.id)
         setCartList(result)
         setTotalAmount(totalAmount - item.amount);
         setPrice(price - item.price * item.amount);
     }
-
+    //Añade 1 elemento desde productos destacados 
     function addCartHeader(newProduct){
         const producInCart = cartList.find((product) => product.id === newProduct.id);
         if (producInCart) {
@@ -96,7 +98,7 @@ export const CartContextProvider = ({children}) => {
         setPrice(price + newProduct.price * newProduct.amount);
         setTotalAmount(totalAmount + newProduct.amount)
     };
-
+    // Realiza un render condicional en el componente CartContainer dependiendo si hay productos en el carrito o array del carrito.
     useEffect(()=>{
         if(cartList.length < 1 && totalAmount < 1){
             setIsProduct(false)

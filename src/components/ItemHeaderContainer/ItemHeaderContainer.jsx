@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { collection, doc, getDoc, getDocs, getFirestore, query, where } from 'firebase/firestore';
-import ItemHeader from './ItemHeader';
+import ItemHeader from '../ItemHeader/ItemHeader';
 
 function ItemHeaderContainer() {
     const [productsHeader, setProductsHeader] = useState([])

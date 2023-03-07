@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import { useParams } from 'react-router-dom';
 import { doc, getDoc, getFirestore } from 'firebase/firestore';
-import ItemDetailHeader from './ItemDetailHeader';
+import ItemDetailHeader from '../ItemDetailHeader/ItemDetailHeader';
 
 
 function ItemDetailHeaderContainer() {

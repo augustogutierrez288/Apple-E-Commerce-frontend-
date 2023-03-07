@@ -1,22 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import visa from '../assets/pagos/visa.png';
-import master from '../assets/pagos/mastercard.png';
-import naranja from '../assets/pagos/naranja.png';
-import amex from '../assets/pagos/amex.png';
-import ahora12 from '../assets/pagos/ahora12.png';
-import argencard from '../assets/pagos/argencard.png';
-import banelco from '../assets/pagos/banelco.png';
-import cabal from '../assets/pagos/cabal.png';
-import cencosud from '../assets/pagos/cencosud.png';
-import cordobesa from '../assets/pagos/cordobesa.png';
-import diners from '../assets/pagos/diners.png';
-import mp from '../assets/pagos/mercadopago.png';
-import pf from '../assets/pagos/pagofacil.png';
-import pz from '../assets/pagos/planZ.png';
-import rp from '../assets/pagos/rapipago.png';
-import shop from '../assets/pagos/shop.png';
-import sucredito from '../assets/pagos/sucredito.jpg'
+import visa from '../../assets/pagos/visa.png';
+import master from '../../assets/pagos/mastercard.png';
+import naranja from '../../assets/pagos/naranja.png';
+import amex from '../../assets/pagos/amex.png';
+import ahora12 from '../../assets/pagos/ahora12.png';
+import argencard from '../../assets/pagos/argencard.png';
+import banelco from '../../assets/pagos/banelco.png';
+import cabal from '../../assets/pagos/cabal.png';
+import cencosud from '../../assets/pagos/cencosud.png';
+import cordobesa from '../../assets/pagos/cordobesa.png';
+import diners from '../../assets/pagos/diners.png';
+import mp from '../../assets/pagos/mercadopago.png';
+import pf from '../../assets/pagos/pagofacil.png';
+import pz from '../../assets/pagos/planZ.png';
+import rp from '../../assets/pagos/rapipago.png';
+import shop from '../../assets/pagos/shop.png';
+import sucredito from '../../assets/pagos/sucredito.jpg'
 
 function Footer() {
 

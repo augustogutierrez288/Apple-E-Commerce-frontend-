@@ -1,8 +1,9 @@
 import React from 'react'
-import arrow from '../assets/arrow.png';
-import add from '../assets/add.png';
+import arrow from '../../assets/arrow.png';
+import add from '../../assets/add.png';
 import { Link } from 'react-router-dom';
-import { useCartContext } from '../context/CartContext';
+import { useCartContext } from '../../context/CartContext';
+
 
 function ItemHeader({product}) {
   const {addCartHeader} = useCartContext()

@@ -1,6 +1,6 @@
 import React, { memo, useState } from 'react';
 import { Link } from 'react-router-dom';
-import Item from './Item';
+import Item from '../Item/Item';
 
 const ItemList = memo(({array}) => {
 

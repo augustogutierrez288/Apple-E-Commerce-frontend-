@@ -1,5 +1,5 @@
-import { useCartContext } from '../context/CartContext';
-import ItemCount from './ItemCount';
+import { useCartContext } from '../../context/CartContext';
+import ItemCount from '../ItemCount/ItemCount';
 
 function ItemDetail({element}) {
  

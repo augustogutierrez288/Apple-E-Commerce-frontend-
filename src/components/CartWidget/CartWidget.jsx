@@ -1,6 +1,6 @@
 import React from 'react'
-import cart from '../assets/carrito-de-compras.png';
-import {useCartContext} from '../context/CartContext'
+import cart from '../../assets/carrito-de-compras.png';
+import {useCartContext} from '../../context/CartContext'
 
 export function CartWidget1() {
   const {totalAmount} = useCartContext()

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { addDoc, collection, getFirestore } from "firebase/firestore";
-import { useCartContext } from "../context/CartContext";
+import { useCartContext } from "../../context/CartContext";
 
 function FormBuy(){
     const {cartList, price, setCartList, setIdOrder, setOnForm, setIsProduct, setTotalAmount, setPrice} = useCartContext()

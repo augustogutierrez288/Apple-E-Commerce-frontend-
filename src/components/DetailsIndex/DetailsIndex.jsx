@@ -1,13 +1,13 @@
 import React from 'react';
-import garantia from '../assets/garantia.png';
-import flexEnvio from '../assets/24-horas.png';
-import atencion from '../assets/atencion-al-cliente.png';
-import pickUp from '../assets/delivery-man.png';
-import envio from '../assets/envio-gratis.png';
-import efectivo from '../assets/efectivo.png';
-import transferencia from '../assets/transferencia.png';
-import tarjetas from '../assets/tarjetas.png';
-import billetera from '../assets/billetera.png';
+import garantia from '../../assets/garantia.png';
+import flexEnvio from '../../assets/24-horas.png';
+import atencion from '../../assets/atencion-al-cliente.png';
+import pickUp from '../../assets/delivery-man.png';
+import envio from '../../assets/envio-gratis.png';
+import efectivo from '../../assets/efectivo.png';
+import transferencia from '../../assets/transferencia.png';
+import tarjetas from '../../assets/tarjetas.png';
+import billetera from '../../assets/billetera.png';
 
 function DetailsIndex() {
   return (

@@ -2,10 +2,10 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { collection, getDocs, getFirestore, query, where } from 'firebase/firestore';
-import ItemList from './ItemList';
-import ItemCharger from './ItemCharger';
-import DetailsIndex from './DetailsIndex';
-import ItemHeaderContainer from './ItemHeaderContainer';
+import ItemList from '../ItemList/ItemList';
+import ItemCharger from '../ItemCharger/ItemCharger';
+import DetailsIndex from '../DetailsIndex/DetailsIndex';
+import ItemHeaderContainer from '../ItemHeaderContainer/ItemHeaderContainer';
 
 function ItemListContainer() {
 
